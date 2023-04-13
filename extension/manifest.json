@@ -1,0 +1,32 @@
+{
+  "name": "FormFiller5000",
+  "version": "0.1.0",
+  "description": "Saving time auto illing forms",
+  "permissions": ["storage", "tabs", "activeTab"],
+  "host_permissions": ["https://localhost:*/*", "https://0.0.0.0.0:*/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "assets/ext-icon.png",
+      "24": "assets/ext-icon.png",
+      "32": "assets/ext-icon.png"
+    },
+    "default_title": "FormFiller5000 | Automagically fill out forms using ChatGPT",
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 3
+}
